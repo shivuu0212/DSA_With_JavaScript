@@ -1,17 +1,27 @@
-function isPalindrome(input) {
-  // Convert number to string (if input is number)
-  let str = input.toString();
+// Q1 - Palindrome Number
+// Given an integer x, return true if x is a palindrome, and false otherwise.
 
-  // Reverse the string
-  let reversed = str.split("").reverse().join("");
+////////////method1//////////
 
-  // Compare original and reversed
-  return str === reversed;
-}
 
-// Test cases
-console.log(isPalindrome("madam")); // true
-console.log(isPalindrome("racecar")); // true
-console.log(isPalindrome("hello")); // false
-console.log(isPalindrome(121)); // true
-console.log(isPalindrome(123)); // false
+// const isPalindrome = function (x) {
+//   return x < 0 ? false : String(x) === String(x).split("").reverse().join("");
+// };
+
+// const res = isPalindrome(10);
+// console.log(res); // false
+
+
+//////////method2//////////
+
+var isPalindrome = function(x) {
+    if (x < 0) return false;  // negative numbers are not palindrome
+
+    let str = x.toString();
+    let reversed = str.split("").reverse().join("");
+    return str === reversed;
+};
+
+console.log(isPalindrome(121));   
+console.log(isPalindrome(-121));  
+console.log(isPalindrome(10));    
